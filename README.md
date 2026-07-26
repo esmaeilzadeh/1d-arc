@@ -4,6 +4,8 @@ Reproduce the **1D-ARC** evaluation from
 [Relational Decomposition for Program Synthesis](https://arxiv.org/pdf/2408.12212)
 (Hocquette & Cropper, IJCAI 2025) using Popper with a relational pixel decomposition.
 
+**GitHub:** https://github.com/esmaeilzadeh/1d-arc
+
 This repository is **1D-only** (no ARC / strings / lists domains, no `sources/` tree).
 
 ## Paper targets (Decom / 1D-ARC)
