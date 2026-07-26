@@ -1,0 +1,20 @@
+# Generated / large artifacts
+programs/
+programs_rerun/
+__pycache__/
+*.pyc
+.Python
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+*.log
+.smoke/
+.codebase-memory/
+
+# Keep raw JSON + parser; ignore accidental copies of other domains
+raw_data/arcraw/
+raw_data/listraw/
+raw_data/stringsraw/
+sources/
