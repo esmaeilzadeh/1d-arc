@@ -18,3 +18,7 @@ raw_data/arcraw/
 raw_data/listraw/
 raw_data/stringsraw/
 sources/
+popper/popper_ilp.egg-info/
+*.deb
+.venv/
+logs/

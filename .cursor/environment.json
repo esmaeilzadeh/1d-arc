@@ -1,8 +1,16 @@
 {
   "name": "1d-arc-popper",
+  "user": "ubuntu",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-  "install": "python3 -m pip install --user -r requirements.txt && python3 -m pip install --user -e ./popper || true"
+  "install": "bash scripts/cloud-agent-install.sh",
+  "terminals": [
+    {
+      "name": "eval",
+      "command": "bash -lc 'source .venv/bin/activate 2>/dev/null || true; exec bash'",
+      "description": "Shell with venv for Popper 1D-ARC train/test (do_train.sh / do_test.sh / results.py)."
+    }
+  ]
 }
