@@ -62,3 +62,23 @@ TIMEOUT=3600 JOBS=$(($(nproc)-2)) bash scripts/run_remote_eval.sh
 tar czf programs-600.tgz programs/relational/600
 # scp programs-600.tgz laptop:
 ```
+
+## Cursor Cloud Agents (Pro)
+
+There is **no free Cursor machine**. Cloud Agents (Pro+) can clone this repo on a Cursor-hosted Ubuntu VM.
+
+1. Create an API key: https://cursor.com/dashboard/api
+2. Connect GitHub to Cursor and ensure `esmaeilzadeh/1d-arc` is accessible
+3. Launch from https://cursor.com/agents or:
+
+```bash
+curl -u "$CURSOR_API_KEY:" -H 'Content-Type: application/json' \
+  https://api.cursor.com/v1/agents \
+  -d '{
+    "prompt": {"text": "Install nothing beyond environment. Run: bash scripts/setup_remote.sh if needed, then TIMEOUT=60 JOBS=2 bash scripts/run_remote_eval.sh for a smoke/short run. Default Cloud VMs are too small for TIMEOUT=600 x 54 jobs; prefer TIMEOUT=60 or a few tasks. Report results.py output."},
+    "repos": [{"url": "https://github.com/esmaeilzadeh/1d-arc", "startingRef": "main"}],
+    "autoCreatePR": false
+  }'
+```
+
+`.cursor/environment.json` + `.cursor/Dockerfile` configure the VM for SWI-Prolog / Clingo / parallel.

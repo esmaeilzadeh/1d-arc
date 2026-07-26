@@ -1,0 +1,8 @@
+{
+  "name": "1d-arc-popper",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "install": "python3 -m pip install --user -r requirements.txt && python3 -m pip install --user -e ./popper || true"
+}
